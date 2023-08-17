@@ -22,6 +22,7 @@
     padding-bottom: 8px;
     margin-right: 5px;
     border: 0;
+    cursor: pointer;
 }
 .box-btn #save{
     background: greenyellow;

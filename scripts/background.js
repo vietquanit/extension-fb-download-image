@@ -29,34 +29,34 @@ chrome.contextMenus.onClicked.addListener(genericOnClick);
 
 // A generic onclick callback function.
 function genericOnClick(info) {
-    openPopupHTML(info.srcUrl, info.menuItemId);
-    // switch (info.menuItemId) {   
+    openPopupHTML(info.srcUrl, info.mediaType);
+    // switch (info.mediaType) {   
     //     case 'radio':
     //         break;
     //     case 'checkbox':
     //         break;
     //     case 'link':
-    //         openPopupHTML(info.srcUrl, info.menuItemId)
+    //         openPopupHTML(info.srcUrl, info.mediaType)
     //         break;
     //     case 'image':
-    //         openPopupHTML(info.srcUrl, info.menuItemId);
+    //         openPopupHTML(info.srcUrl, info.mediaType);
     //         break;
     //     default:
-    //         openPopupHTML(info.srcUrl, info.menuItemId);
+    //         openPopupHTML(info.srcUrl, info.mediaType);
     //         break;
     // }
     console.log(info)
 }
 
 
-function openPopupHTML(url){
+function openPopupHTML(url, type){
     chrome.windows.create({
             url: 'popup/index.html',
             type: 'popup',
             width: 400,
             height: 600
     });
-    sendUrlToPopUp(url)
+    sendUrlToPopUp(url, type)
 }
 
 function sendUrlToPopUp(urlString, type){
